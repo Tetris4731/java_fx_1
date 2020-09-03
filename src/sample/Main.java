@@ -6,17 +6,20 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import javax.swing.*;
-public class Main extends JFrame {
-    public Main() {
-        setTitle("Test Chat");
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setBounds(300, 300, 400, 400);
-        setVisible(true);
+public class Main extends Application {
+
+    @Override
+    public void start(Stage primaryStage) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        primaryStage.setTitle("Hello World");
+        primaryStage.setScene(new Scene(root, 300, 500));
+        primaryStage.show();
+
+
     }
-}
-class MainClass{
-    public static void main( String[] args ) {
-        new Main();
+
+
+    public static void main(String[] args) {
+        launch(args);
     }
 }
